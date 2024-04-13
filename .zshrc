@@ -1,23 +1,36 @@
-# If you come from bash you might have to change your $PATH.
-export PATH="$HOME/.local/bin:$HOME/bin:/usr/local/bin:$PATH"
+export ZPLUG_HOME="$HOME/.zplug"
 
-# Path to your oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
+if [ ! -d  "$ZPLUG_HOME" ]; then
+    echo 'Installing zplug to manage zsh plugins.'
+    git clone https://github.com/zplug/zplug.git "$ZPLUG_HOME"
+fi
 
-# Plugins to be loaded by oh-my-zsh.
-plugins=(
-    # Adds aliases for common git commands.
-    git
-    # Automatically completes shell commands.
-    zsh-autocomplete
-    # Suggests commands when typing in the shell.
-    zsh-autosuggestions
-    # Highlights text on the shell.
-    zsh-syntax-highlighting
-)
+# Use zplug to manage plugins for zsh.
+# shellcheck disable=SC1091
+source "$ZPLUG_HOME/init.zsh"
 
-# Load oh-my-zsh configuration.
-source $ZSH/oh-my-zsh.sh
+# Adds aliases for common git commands.
+zplug "plugins/git", from:oh-my-zsh
+
+# Automatically completes shell commands.
+zplug "marlonrichert/zsh-autocomplete"
+
+# Suggests commands when typing in the shell.
+zplug "zsh-users/zsh-autosuggestions"
+
+# Highlights text on the shell.
+zplug "zsh-users/zsh-syntax-highlighting"
+
+# Install plugins that haven't been installed already.
+if ! zplug check --verbose; then
+    printf "Install? [y/N]: "
+    if read -q; then
+        echo; zplug install
+    fi
+fi
+
+# Source plugins and add commands to $PATH.
+zplug load
 
 # Aliases for shell commands.
 alias ll="eza --header --long --icons=auto --time-style=long-iso --group-directories-first --git"

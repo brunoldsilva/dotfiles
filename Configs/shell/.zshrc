@@ -56,7 +56,11 @@ alias lt="eza --header --long --icons=auto --time-style=long-iso --group-directo
 alias bat="bat --theme=TwoDark"
 
 # Use zoxide as an alternative to cd.
-eval "$(zoxide init --cmd cd zsh)"
+if command -v zoxide &> /dev/null; then
+    eval "$(zoxide init --cmd cd zsh)"
+fi
 
 # Use Starship as the default prompt.
-eval "$(starship init zsh)"
+if command -v starship &> /dev/null; then
+    eval "$(starship init zsh)"
+fi

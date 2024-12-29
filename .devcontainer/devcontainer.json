@@ -1,0 +1,28 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/ubuntu
+{
+	"name": "Ubuntu",
+	"image": "mcr.microsoft.com/devcontainers/base:ubuntu-22.04",
+	// Tool specific configurations. More info: https://containers.dev/supporting
+	"customizations": {
+		// Visual Studio Code specific configurations.
+		"vscode": {
+			"settings": {
+				"editor.formatOnSave": true
+			},
+			"extensions": [
+				// A language server for bash.
+				"mads-hartmann.bash-ide-vscode",
+				// Integrates shellcheck into Visual Studio Code.
+				"timonwong.shellcheck"
+			]
+		}
+	},
+	// Features to add to the dev container. More info: https://containers.dev/features
+	"features": {
+		// A linter for shell scripts.
+		"ghcr.io/marcozac/devcontainer-features/shellcheck:1": {},
+		// A formatter for shell scripts.
+		"ghcr.io/devcontainers-extra/features/shfmt:1": {}
+	}
+}

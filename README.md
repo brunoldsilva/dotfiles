@@ -4,27 +4,35 @@ Configuration files and tools for my system.
 
 ## Usage
 
-Clone this repository to your home folder.
+Clone this repository to your home configuration folder.
 
 ```bash
-git clone https://github.com/brunoldsilva/dotfiles.git "$HOME"
+git clone https://github.com/brunoldsilva/dotfiles.git "$HOME/.config/dotfiles"
 ```
 
-Open the terminal inside of the `dotfiles` folder, and choose one of following options:
+Use the `dotfiles.sh` script to install the required tools.
 
-1. Run the installation script to install the dotfiles, and some additional tools.
+```bash
+scripts/dotfiles.sh init
+```
 
-    ```bash
-    scripts/install.sh
-    ```
+Use [Tuckr] to install the configuration files. You may have to reload the shell if you just installed Cargo with the `dotfiles.sh` script.
 
-2. Run [stow] to just install the dotfiles:
+```bash
+# List configuration groups.
+tuckr status
 
-    ```bash
-    stow .
-    ```
+# Install a configuration group.
+tuckr add --force shell
+```
 
-[stow]: https://www.gnu.org/software/stow/
+Use the `dotfiles.sh` script to install additional tools.
+
+```bash
+cargo install --locked $(scripts/dotfiles.sh list cli)
+```
+
+[Tuckr]: https://github.com/RaphGL/Tuckr
 
 ## License
 

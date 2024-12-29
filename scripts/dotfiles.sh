@@ -88,6 +88,8 @@ function init() {
     # Install cargo using the rustup toolchain manager.
     if ! command -v cargo &>/dev/null; then
         curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        # shellcheck disable=SC1091
+        source "$HOME/.cargo/env"
     else
         echo -e "$SCRIPT: cargo already installed"
     fi

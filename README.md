@@ -16,7 +16,7 @@ Use the `dotfiles.sh` script to install the required tools.
 scripts/dotfiles.sh init
 ```
 
-Use [Tuckr] to install the configuration files.
+Use [Tuckr] to install the configuration files. You may have to reload the shell if you just installed Cargo with the `dotfiles.sh` script.
 
 ```bash
 # List configuration groups.

@@ -23,7 +23,7 @@ function main() {
             break
             ;;
         *)
-            echo -e "$SCRIPT: unknow option '$1'"
+            echo -e "$SCRIPT: unknown option '$1'"
             exit 1
             ;;
         esac
@@ -45,7 +45,7 @@ function main() {
             usage "$@"
             ;;
         *)
-            echo -e "$SCRIPT: unknow command '$1'"
+            echo -e "$SCRIPT: unknown command '$1'"
             exit 1
             ;;
         esac
@@ -69,7 +69,7 @@ function init() {
             break
             ;;
         *)
-            echo -e "$SCRIPT: unknow option '$1'"
+            echo -e "$SCRIPT: unknown option '$1'"
             exit 1
             ;;
         esac
@@ -100,7 +100,7 @@ function init() {
     fi
 }
 
-# Lists tools.
+# Lists tools by category.
 function list() {
     # Parse command options.
     while [[ $# -gt 0 && "$1" =~ '-' ]]; do
@@ -114,7 +114,7 @@ function list() {
             break
             ;;
         *)
-            echo -e "$SCRIPT: unknow option '$1'"
+            echo -e "$SCRIPT: unknown option '$1'"
             exit 1
             ;;
         esac
@@ -139,6 +139,8 @@ function list() {
         ripgrep  # Modern alternative to `grep`.
         fd-find  # Simple, fast and user-friendly alternative to 'find'.
         ouch     # Painless compression and decompression in the terminal.
+        tealdeer # Very fast implementation of `tldr` in Rust.
+        eza      # Modern alternative to ls.
     )
 
     # Display lists.
@@ -167,7 +169,7 @@ function list() {
     echo
 }
 
-# Display a help message for using this script.
+# Displays a help message for using this script.
 function usage() {
     # Sanity check.
     if [[ $# -eq 0 ]]; then
@@ -235,7 +237,7 @@ $> cargo install --locked \$($SCRIPT list cli)
 EOF
         ;;
     *)
-        echo -n "$SCRIPT: unknow command $1"
+        echo -n "$SCRIPT: unknown command $1"
         exit 1
         ;;
     esac

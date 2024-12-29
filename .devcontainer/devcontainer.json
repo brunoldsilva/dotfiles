@@ -11,7 +11,7 @@
 				"editor.formatOnSave": true
 			},
 			"extensions": [
-				// A languague server for bash.
+				// A language server for bash.
 				"mads-hartmann.bash-ide-vscode",
 				// Integrates shellcheck into Visual Studio Code.
 				"timonwong.shellcheck"
@@ -22,7 +22,7 @@
 	"features": {
 		// A linter for shell scripts.
 		"ghcr.io/marcozac/devcontainer-features/shellcheck:1": {},
-		// A formater for shell scripts.
+		// A formatter for shell scripts.
 		"ghcr.io/devcontainers-extra/features/shfmt:1": {}
 	}
 }

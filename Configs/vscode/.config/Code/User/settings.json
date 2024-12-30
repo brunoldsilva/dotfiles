@@ -1,0 +1,50 @@
+// Visual Studio Code user settings.
+// More info: https://code.visualstudio.com/docs/getstarted/settings
+{
+    // Miscellaneous editor settings.
+    "editor.acceptSuggestionOnEnter": "off",
+    "editor.bracketPairColorization.enabled": true,
+    "editor.copyWithSyntaxHighlighting": false,
+    "editor.cursorSmoothCaretAnimation": "on",
+    "editor.cursorWidth": 2,
+    "editor.fontFamily": "'RobotoMono Nerd Font', Consolas, 'Courier New', monospace",
+    "editor.formatOnSave": true,
+    "editor.rulers": [
+        100
+    ],
+    "editor.smoothScrolling": true,
+    "editor.stablePeek": true,
+    "editor.wordWrap": "bounded",
+    "editor.wordWrapColumn": 100,
+    "files.insertFinalNewline": true,
+    "window.restoreWindows": "none",
+    // Terminal specific settings.
+    "terminal.integrated.defaultLocation": "editor",
+    "terminal.integrated.profiles.linux": {
+        "nu": {
+            "path": "nu"
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "bash": {
+            "path": "bash",
+        },
+    },
+    // Markdown specific settings.
+    "[markdown]": {
+        "editor.wordWrapColumn": 80,
+        "editor.rulers": [
+            80,
+        ],
+    },
+    // Rust specific settings.
+    "[rust]": {
+        "editor.wordWrapColumn": 120,
+        "editor.rulers": [
+            100,
+            120
+        ],
+    },
+    "rust-analyzer.check.command": "clippy",
+}

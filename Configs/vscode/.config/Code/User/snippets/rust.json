@@ -2,10 +2,11 @@
 // More info: https://code.visualstudio.com/docs/editor/userdefinedsnippets
 {
     "With Attribute Setter": {
-        "prefix": "with_",
+        "prefix": "with",
         "description": "A method for assigning an attribute.",
         "body": [
             "/// Returns [`Self`] with the given `${1:attribute}`.",
+            "#[must_use]",
             "pub fn with_$1(mut self, $1: ${2:Type}) -> Self {",
             "\tself.$1$3$1;",
             "\tself",

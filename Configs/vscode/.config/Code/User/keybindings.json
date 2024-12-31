@@ -1,0 +1,12 @@
+// Visual Studio Code user keybindings.
+// More info: https://code.visualstudio.com/docs/getstarted/keybindings
+[
+    {
+        "key": "ctrl+k shift+t",
+        "command": "workbench.action.createTerminalEditorSide"
+    },
+    {
+        "key": "ctrl+k t",
+        "command": "workbench.action.createTerminalEditor"
+    }
+]

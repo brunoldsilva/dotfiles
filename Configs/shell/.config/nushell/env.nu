@@ -39,6 +39,6 @@ if (which carapace | is-not-empty) {
     let carapace_file = $"($env.HOME)/.cache/carapace/init.nu"
     if ($carapace_file | path exists) == false {
         mkdir $"($env.HOME)/.cache/carapace"
-        carapace _carapace nushell | save --force carapace_file
+        carapace _carapace nushell | save --force $carapace_file
     }
 }

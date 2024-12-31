@@ -1,0 +1,7 @@
+# Patterns to exclude from source control.
+
+# Hidden files.
+_*
+
+# nushell history file.
+history.txt

@@ -13,19 +13,13 @@ $env.config.show_banner = false
 $env.config.completions.partial = false
 
 # Initialize zoxide.
-if ($"($env.HOME)/.cache/zoxide/init.nu" | path exists) {
-    source '~/.cache/zoxide/init.nu'
-}
+source '~/.cache/zoxide/init.nu'
 
 # Initialize carapace.
-if ($"($env.HOME)/.cache/carapace/init.nu" | path exists) {
-    source '~/.cache/carapace/init.nu'
-}
+source '~/.cache/carapace/init.nu'
 
 # Initialize starship.
-if ($"($env.HOME)/.cache/starship/init.nu" | path exists) {
-    source '~/.cache/starship/init.nu'
-}
+source '~/.cache/starship/init.nu'
 
 # Define aliases for common ls commands.
 alias ll = eza --header --long --icons=auto --time-style=long-iso --group-directories-first --git

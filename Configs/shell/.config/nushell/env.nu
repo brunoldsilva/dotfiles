@@ -17,28 +17,34 @@
 # them for future reference.
 
 # Initialize starship.
-if (which starship | is-not-empty) {
-    let starship_file = $"($env.HOME)/.cache/starship/init.nu"
-    if ($starship_file | path exists) == false {
-        mkdir $"($env.HOME)/.cache/starship"
+let starship_file = $"($env.HOME)/.cache/starship/init.nu"
+if not ($starship_file | path exists) {
+    mkdir ($starship_file | path dirname)
+    if (which starship | is-not-empty) {
         starship init nu | save --force $starship_file
+    } else {
+        touch $starship_file
     }
 }
 
 # Initialize zoxide.
-if (which zoxide | is-not-empty) {
-    let zoxide_file = $"($env.HOME)/.cache/zoxide/init.nu"
-    if ($zoxide_file | path exists) == false {
-        mkdir $"($env.HOME)/.cache/zoxide"
+let zoxide_file = $"($env.HOME)/.cache/zoxide/init.nu"
+if not ($zoxide_file | path exists) {
+    mkdir ($zoxide_file | path dirname)
+    if (which zoxide | is-not-empty) {
         zoxide init --cmd cd nushell | save --force $zoxide_file
+    } else {
+        touch $zoxide_file
     }
 }
 
 # Initialize carapace.
-if (which carapace | is-not-empty) {
-    let carapace_file = $"($env.HOME)/.cache/carapace/init.nu"
-    if ($carapace_file | path exists) == false {
-        mkdir $"($env.HOME)/.cache/carapace"
+let carapace_file = $"($env.HOME)/.cache/carapace/init.nu"
+if not ($carapace_file | path exists) {
+    mkdir ($carapace_file | path dirname)
+    if (which carapace | is-not-empty) {
         carapace _carapace nushell | save --force $carapace_file
+    } else {
+        touch $carapace_file
     }
 }

@@ -1,0 +1,15 @@
+# Alacritty - TOML configuration file.
+
+[general]
+import = [
+    "~/.config/alacritty/themes/themes/one_dark.toml"
+]
+
+[window]
+padding = { x = 5, y = 0 }
+
+[font]
+normal = { family = "RobotoMono Nerd Font", style = "Regular" }
+
+[terminal]
+shell = "nu"

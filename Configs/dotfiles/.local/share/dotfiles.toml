@@ -5,6 +5,10 @@ configure = true
 install = false
 
 [[packages]]
+name = "bat"
+description = "Clone of cat(1) with syntax highlighting and Git integration."
+
+[[packages]]
 name = "bottom"
 description = "Yet another cross-platform graphical process/system monitor."
 

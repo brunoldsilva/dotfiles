@@ -1,3 +1,6 @@
+# Update the PATH to include Homebrew binaries.
+export PATH="/home/linuxbrew/.linuxbrew/sbin:/home/linuxbrew/.linuxbrew/bin:${PATH}"
+
 # Configure the history file.
 [ -z "$HISTFILE" ] && HISTFILE="$HOME/.zsh_history"
 [ "$HISTSIZE" -lt 50000 ] && HISTSIZE=50000
@@ -49,11 +52,47 @@ fi
 # Source plugins and add commands to $PATH.
 zplug load
 
-# Aliases for shell commands.
+# Define aliases for common ls commands.
+
 alias ll="eza --header --long --icons=auto --time-style=long-iso --group-directories-first --git"
 alias la="eza --header --long --icons=auto --time-style=long-iso --group-directories-first --git --all"
 alias lt="eza --header --long --icons=auto --time-style=long-iso --group-directories-first --git --tree --level=2"
-alias bat="bat --theme=TwoDark"
+
+# Define aliases for common bat commands.
+
+alias bt="bat --plain --theme TwoDark"
+alias bl="bat --plain --theme TwoDark --language log"
+
+# Define aliases for common git commands.
+
+alias g="git"
+alias ga="git add"
+alias gc="git commit"
+alias gd="git diff"
+alias gf="git fetch"
+alias gl="git log"
+alias gm="git merge"
+alias gp="git push"
+alias gs="git status"
+alias gco="git checkout"
+alias glo="git log --oneline"
+alias gsw="git switch"
+
+# Define aliases for common just commands.
+
+alias j="just"
+alias jb="just build"
+alias jc="just check"
+alias jr="just run"
+alias jt="just test"
+
+# Define aliases for common Cargo commands.
+
+alias c="cargo"
+alias cb="cargo build"
+alias cc="cargo clippy"
+alias cr="cargo run"
+alias ct="cargo test"
 
 # Use zoxide as an alternative to cd.
 if command -v zoxide &> /dev/null; then

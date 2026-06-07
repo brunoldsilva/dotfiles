@@ -10,29 +10,17 @@ Clone this repository to your home configuration folder.
 git clone https://github.com/brunoldsilva/dotfiles.git "$HOME/.config/dotfiles"
 ```
 
-Use the `dotfiles.sh` script to install the required tools.
+Run the `init.sh` script to initialize the dotfiles helper.
 
 ```bash
-scripts/dotfiles.sh init
+scripts/init.sh
 ```
 
-Use [Tuckr] to install the configuration files. You may have to reload the shell if you just installed Cargo with the `dotfiles.sh` script.
+Use the `dotfiles` command to install the required tools.
 
 ```bash
-# List configuration groups.
-tuckr status
-
-# Install a configuration group.
-tuckr add --force shell
+dotfiles install
 ```
-
-Use the `dotfiles.sh` script to install additional tools.
-
-```bash
-cargo install --locked $(scripts/dotfiles.sh list cli)
-```
-
-[Tuckr]: https://github.com/RaphGL/Tuckr
 
 ## License
 

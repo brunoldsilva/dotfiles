@@ -1,0 +1,47 @@
+#!/home/linuxbrew/.linuxbrew/bin/nu
+
+# Helper for installing dotfiles and related packages.
+def main [] {
+    help main
+}
+
+# Installs dotfiles and packages.
+def "main install" [] {
+    # Path to the dotfiles package configuration.
+    const dotfiles = (
+        path self | path dirname | path join .. share dotfiles.toml
+    )
+
+    # Packages available for installation.
+    let packages = open $dotfiles | get packages
+
+    # Packages that the user wants to install.
+    let selected = $packages
+    | select name description
+    | input list --multi
+    | select name
+    | join $packages name
+
+    # Install and configure the packages.
+    $selected | each {|package|
+        # Install using Homebrew.
+        if ($package.install? | default true) {
+            with-env {
+                PATH: ($env.PATH | prepend /home/linuxbrew/.linuxbrew/bin)
+                HOMEBREW_NO_ENV_HINTS: 1
+            } {
+                brew install $package.name
+            }
+
+        }
+
+        # Configure using Tuckr.
+        if ($package.configure? | default false) {
+            with-env {
+                PATH: ($env.PATH | prepend /home/linuxbrew/.linuxbrew/bin)
+            } {
+                tuckr set --force --assume-yes $package.name
+            }
+        }
+    } | ignore
+}

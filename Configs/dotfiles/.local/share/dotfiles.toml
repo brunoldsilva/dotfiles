@@ -1,0 +1,78 @@
+[[packages]]
+name = "alacritty"
+description = "A cross-platform, OpenGL terminal emulator."
+configure = true
+install = false
+
+[[packages]]
+name = "bat"
+description = "Clone of cat(1) with syntax highlighting and Git integration."
+
+[[packages]]
+name = "bottom"
+description = "Yet another cross-platform graphical process/system monitor."
+
+[[packages]]
+name = "carapace"
+description = "Multi-shell multi-command argument completer."
+configure = true
+
+[[packages]]
+name = "dust"
+description = "More intuitive version of du in rust."
+
+[[packages]]
+name = "eza"
+description = "Modern alternative to ls."
+
+[[packages]]
+name = "fd"
+description = "Simple, fast and user-friendly alternative to 'find'."
+
+[[packages]]
+name = "helix"
+description = "Post-modern modal text editor."
+configure = true
+
+[[packages]]
+name = "just"
+description = "Handy way to save and run project-specific commands."
+
+[[packages]]
+name = "nushell"
+description = "A new type of shell."
+configure = true
+
+[[packages]]
+name = "ouch"
+description = "Painless compression and decompression in the terminal."
+
+[[packages]]
+name = "ripgrep"
+description = "Modern alternative to `grep`."
+
+[[packages]]
+name = "starship"
+description = "Minimal, blazing-fast, and infinitely customizable prompt for any shell."
+configure = true
+
+[[packages]]
+name = "tealdeer"
+description = "Very fast implementation of `tldr` in Rust."
+
+[[packages]]
+name = "vscode"
+description = "Source code editor developed by Microsoft"
+configure = true
+install = false
+
+[[packages]]
+name = "zoxide"
+description = "Smarter cd command, inspired by z and autojump."
+configure = true
+
+[[packages]]
+name = "zsh"
+description = "A Unix shell."
+configure = true
+install = false

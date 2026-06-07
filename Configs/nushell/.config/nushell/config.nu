@@ -14,7 +14,7 @@ $env.config.show_banner = false
 $env.config.completions.partial = false
 
 # Use SQLite as the history backend.
-$env.config.history.format = "sqlite"
+$env.config.history.file_format = "sqlite"
 $env.config.history.isolation = true
 
 # Truncate large tables.

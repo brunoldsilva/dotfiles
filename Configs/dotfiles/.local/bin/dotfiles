@@ -28,6 +28,7 @@ def "main install" [] {
         if ($package.install? | default true) {
             with-env {
                 PATH: ($env.PATH | prepend /home/linuxbrew/.linuxbrew/bin)
+                HOMEBREW_NO_ENV_HINTS: 1
             } {
                 brew install $package.name
             }

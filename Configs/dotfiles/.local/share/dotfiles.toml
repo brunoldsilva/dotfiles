@@ -26,6 +26,10 @@ name = "fd"
 description = "Simple, fast and user-friendly alternative to 'find'."
 
 [[packages]]
+name = "helix"
+description = "Post-modern modal text editor."
+
+[[packages]]
 name = "just"
 description = "Handy way to save and run project-specific commands."
 

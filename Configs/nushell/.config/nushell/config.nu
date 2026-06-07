@@ -12,15 +12,6 @@ $env.config.show_banner = false
 # Don't complete partial matches.
 $env.config.completions.partial = false
 
-# Initialize zoxide.
-source '~/.cache/zoxide/init.nu'
-
-# Initialize carapace.
-source '~/.cache/carapace/init.nu'
-
-# Initialize starship.
-source '~/.cache/starship/init.nu'
-
 # Define aliases for common ls commands.
 alias ll = eza --header --long --icons=auto --time-style=long-iso --group-directories-first --git
 alias la = eza --header --long --icons=auto --time-style=long-iso --group-directories-first --git --all

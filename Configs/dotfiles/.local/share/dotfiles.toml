@@ -28,6 +28,7 @@ description = "Simple, fast and user-friendly alternative to 'find'."
 [[packages]]
 name = "helix"
 description = "Post-modern modal text editor."
+configure = true
 
 [[packages]]
 name = "just"
@@ -64,3 +65,10 @@ install = false
 [[packages]]
 name = "zoxide"
 description = "Smarter cd command, inspired by z and autojump."
+configure = true
+
+[[packages]]
+name = "zsh"
+description = "A Unix shell."
+configure = true
+install = false

@@ -73,8 +73,8 @@ function install_deps {
 }
 
 # Installs the dotfiles helper script.
-function helper {
-    /home/linuxbrew/.linuxbrew/bin/tuckr set dotfiles
+function install_helper {
+    /home/linuxbrew/.linuxbrew/bin/tuckr set --force --assume-yes dotfiles
 }
 
 # Entry point of the script.

@@ -26,7 +26,7 @@ def "main install" [] {
     $selected | each {|package|
         # Install using Homebrew.
         if ($package.install? | default true) {
-            /home/linuxbrew/.linuxbrew/bin/brew install $package.name
+            /home/linuxbrew/.linuxbrew/Homebrew/bin/brew install $package.name
         }
 
         # Configure using Tuckr.

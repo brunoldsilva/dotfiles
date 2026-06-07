@@ -26,12 +26,21 @@ def "main install" [] {
     $selected | each {|package|
         # Install using Homebrew.
         if ($package.install? | default true) {
-            /home/linuxbrew/.linuxbrew/Homebrew/bin/brew install $package.name
+            with-env {
+                PATH: ($env.PATH | prepend /home/linuxbrew/.linuxbrew/bin)
+            } {
+                brew install $package.name
+            }
+
         }
 
         # Configure using Tuckr.
         if ($package.configure? | default false) {
-            /home/linuxbrew/.linuxbrew/bin/tuckr set --force --assume-yes $package.name
+            with-env {
+                PATH: ($env.PATH | prepend /home/linuxbrew/.linuxbrew/bin)
+            } {
+                tuckr set --force --assume-yes $package.name
+            }
         }
     } | ignore
 }
